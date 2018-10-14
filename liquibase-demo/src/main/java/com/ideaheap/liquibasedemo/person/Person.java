@@ -1,9 +1,8 @@
-package com.ideaheap.liquibasedemo;
+package com.ideaheap.liquibasedemo.person;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.ideaheap.liquibasedemo.state.State;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="person")
@@ -21,8 +20,9 @@ public class Person {
     @Column
     private String username;
 
-    @Column
-    private String state;
+    @ManyToOne
+    @JoinColumn(name="state", referencedColumnName = "id")
+    private State state;
 
     public Integer getId() {
         return id;
@@ -48,11 +48,11 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public String getState() {
+    public State getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(State state) {
         this.state = state;
     }
 

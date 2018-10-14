@@ -1,4 +1,4 @@
-package com.ideaheap.liquibasedemo;
+package com.ideaheap.liquibasedemo.state;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

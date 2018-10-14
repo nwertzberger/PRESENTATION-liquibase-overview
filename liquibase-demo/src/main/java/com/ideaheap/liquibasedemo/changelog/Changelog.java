@@ -1,4 +1,4 @@
-package com.ideaheap.liquibasedemo;
+package com.ideaheap.liquibasedemo.changelog;
 
 
 import javax.persistence.Column;
