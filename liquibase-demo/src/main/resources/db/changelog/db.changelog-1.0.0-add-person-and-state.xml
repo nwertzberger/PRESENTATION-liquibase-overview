@@ -4,7 +4,7 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
 
@@ -21,7 +21,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="2" author="nwertzberger">
+    <changeSet id="2" author="nwertzberger" context="DEV" labels="STGCIN-122">
         <addColumn tableName="person">
             <column name="username" type="varchar(8)"/>
         </addColumn>
@@ -34,6 +34,13 @@
                 newTableName="state"
                 newColumnName="id"
                 newColumnDataType="char(2)"/>
+    </changeSet>
+
+    <changeSet id="4" author="nwertzberger" labels="STGCIN-433,STGCIN-432">
+        <createIndex tableName="person" indexName="person_x1">
+            <column name="firstname"></column>
+            <column name="lastname"></column>
+        </createIndex>
     </changeSet>
 
 </databaseChangeLog>

@@ -24,8 +24,6 @@ alter table country
 
 --changeset nwertzberger:add-constraints-for-state-and-country
 alter table state
- add constraint state_fk1
- foreign key (country) references country(id);
+  add constraint state_fk1
+  foreign key (country) references country(id);
 --rollback alter table state drop constraint state_fk1;
-
-
